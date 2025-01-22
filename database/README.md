@@ -1,6 +1,10 @@
 # Mocking Database
 * Working with Docker
-
+  * Create database server
+  * Create database name
+  * Create tables
+  * Create data for test from test cases
+  * Delete all
 
 ## Working with Docker
 
