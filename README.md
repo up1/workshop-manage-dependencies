@@ -1,10 +1,7 @@
 # Workshop manage dependencies
 * Databases
+  * RDBMS
+  * NoSQL
 * External systems
   * RESTFul API
-
-## 1. Database
-
-
-
-## 2. External system
+* [Test containers](https://testcontainers.com/)
