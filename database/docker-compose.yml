@@ -1,0 +1,19 @@
+services:
+  mysql:
+    image: mysql:8.4.0
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/tables.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./mysql/data.sql:/docker-entrypoint-initdb.d/2.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: hellodb
+      MYSQL_USER: user01
+      MYSQL_PASSWORD: password01
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-uuser01", "-ppassword01"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
