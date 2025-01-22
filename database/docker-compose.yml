@@ -17,3 +17,14 @@ services:
       interval: 10s
       timeout: 5s
       retries: 3
+
+  mongodb:
+    image: mongo:8.0.4-noble
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongodb/initial.js:/docker-entrypoint-initdb.d/1.js
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password

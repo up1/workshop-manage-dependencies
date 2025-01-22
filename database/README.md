@@ -30,3 +30,21 @@ Delete all
 $docker compose down
 ```
 
+### MongoDB
+```
+$docker compose up -d mongodb
+$docker compose ps
+```
+
+Access to mongodb container to check data
+```
+$docker exec -it mongodb bash
+$mongosh --host localhost -u admin -p password  --authenticationDatabase admin my_database
+$db.my_collection.find();
+```
+
+Delete all
+```
+$docker compose down
+```
+
